@@ -145,21 +145,24 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--white);
-  transition: color var(--transition);
 }
 
-.scrolled .logo {
-  color: var(--text);
+.logo-img {
+  height: 50px;
+  width: auto;
+  transition: opacity var(--transition);
 }
 
-.logo-icon {
-  font-size: 1.5rem;
-  color: var(--gold);
+.logo-img-dark {
+  display: none;
+}
+
+.scrolled .logo-img-white {
+  display: none;
+}
+
+.scrolled .logo-img-dark {
+  display: block;
 }
 
 .nav {
@@ -260,13 +263,16 @@ img {
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #3a3530 0%, #5a504a 50%, #4a433d 100%);
+  background-image: url('images/hero-bg.webp');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(184,150,62,0.1) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(44,44,44,0.75) 0%, rgba(44,44,44,0.5) 100%);
 }
 
 .hero-content {
@@ -398,6 +404,53 @@ img {
   line-height: 1.6;
 }
 
+/* ---- What's Included ---- */
+
+.included {
+  padding: 100px 0;
+  background: var(--ivory);
+}
+
+.included-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.included-image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  object-fit: cover;
+}
+
+.included-text h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 24px;
+}
+
+.included-list {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.included-list li {
+  padding: 8px 0;
+  padding-left: 28px;
+  position: relative;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.included-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 /* ---- Why Us ---- */
 
 .why-us {
@@ -462,23 +515,30 @@ img {
   transform: translateY(0);
 }
 
-.about-image-placeholder {
+.about-image img {
   width: 100%;
-  aspect-ratio: 4/5;
-  background: var(--cream);
   border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--dove);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
 }
 
-.about-image-placeholder span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--dove);
+.about-mission {
+  margin-top: 20px;
+  padding: 20px 24px;
+  background: var(--ivory);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+}
+
+.about-mission h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--gold-dark);
+}
+
+.about-mission p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 .about-text h2 {
@@ -767,15 +827,13 @@ img {
 }
 
 .footer-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--white);
   margin-bottom: 8px;
 }
 
-.footer-brand .logo-icon {
-  color: var(--gold-light);
+.footer-logo {
+  height: 60px;
+  width: auto;
+  margin: 0 auto 12px;
 }
 
 .footer-brand p {
@@ -891,14 +949,14 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .about-inner {
+  .included-inner {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .about-image-placeholder {
-    max-width: 300px;
-    margin: 0 auto;
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .testimonials-grid {
