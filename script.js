@@ -35,23 +35,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Form submission
+  // Form submission via Formsubmit.co
   var form = document.getElementById('quoteForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var data = new FormData(form);
-    var values = {};
-    data.forEach(function (v, k) { values[k] = v; });
-
-    // Replace this with your actual form endpoint (Formspree, Netlify Forms, etc.)
     var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    setTimeout(function () {
+    var data = new FormData(form);
+
+    fetch('https://formsubmit.co/ajax/whitedovecleaningco@gmail.com', {
+      method: 'POST',
+      body: data
+    })
+    .then(function (response) { return response.json(); })
+    .then(function () {
       form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3>Thank You!</h3><p>We\'ve received your request and will get back to you within a few hours.</p></div>';
-    }, 1000);
+    })
+    .catch(function () {
+      btn.textContent = 'Send Request';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us at (317) 793-2172 or try again.');
+    });
   });
 
   // Intersection Observer for animations
