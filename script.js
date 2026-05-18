@@ -6,19 +6,20 @@ document.addEventListener('DOMContentLoaded', function () {
     header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Mobile menu
+  // Mobile menu with aria-expanded
   var toggle = document.getElementById('menuToggle');
   var nav = document.getElementById('nav');
   toggle.addEventListener('click', function () {
-    nav.classList.toggle('open');
+    var isOpen = nav.classList.toggle('open');
     toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close mobile menu on link click
   nav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       nav.classList.remove('open');
       toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 
@@ -40,11 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    var consent = document.getElementById('consent');
+    if (!consent.checked) {
+      consent.focus();
+      return;
+    }
+
     var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
     var data = new FormData(form);
+    data.delete('consent');
 
     fetch('https://formsubmit.co/ajax/whitedovecleaningco@gmail.com', {
       method: 'POST',
@@ -52,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(function (response) { return response.json(); })
     .then(function () {
-      form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3>Thank You!</h3><p>We\'ve received your request and will get back to you within a few hours.</p></div>';
+      form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3>Thank You!</h3><p>We\'ve received your request and will get back to you within a few hours.</p></div>';
     })
     .catch(function () {
       btn.textContent = 'Send Request';
@@ -62,15 +70,42 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Intersection Observer for animations
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  document.querySelectorAll('.service-card, .why-item, .testimonial-card, .about-inner').forEach(function (el) {
-    observer.observe(el);
+    document.querySelectorAll('.service-card, .why-item, .testimonial-card, .about-inner').forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.service-card, .why-item, .testimonial-card, .about-inner').forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
+  // Cookie consent banner
+  var banner = document.getElementById('cookieBanner');
+  var acceptBtn = document.getElementById('cookieAccept');
+  var declineBtn = document.getElementById('cookieDecline');
+
+  if (localStorage.getItem('cookie-consent')) {
+    banner.classList.add('hidden');
+  }
+
+  acceptBtn.addEventListener('click', function () {
+    localStorage.setItem('cookie-consent', 'accepted');
+    banner.classList.add('hidden');
+    if (typeof loadGTM === 'function') { loadGTM(); }
+  });
+
+  declineBtn.addEventListener('click', function () {
+    localStorage.setItem('cookie-consent', 'declined');
+    banner.classList.add('hidden');
   });
 });

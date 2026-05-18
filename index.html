@@ -7,6 +7,8 @@
   <meta name="description" content="White Dove Cleaning Services serves Indianapolis &amp; nearby areas with expert residential and commercial cleaning. Woman-owned and locally operated. Request an estimate today!">
   <link rel="icon" href="favicon.ico">
   <link rel="canonical" href="https://www.whitedovecleaningservices.com/">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com; connect-src 'self' https://formsubmit.co https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://www.googletagmanager.com;">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -16,12 +18,20 @@
   <meta property="og:url" content="https://www.whitedovecleaningservices.com/">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TF7P76ZJ');</script>
+  <!-- Google Tag Manager — deferred until cookie consent -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function loadGTM() {
+    if (window._gtmLoaded) return;
+    window._gtmLoaded = true;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TF7P76ZJ');
+  }
+  if (localStorage.getItem('cookie-consent') === 'accepted') { loadGTM(); }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,17 +39,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF7P76ZJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Skip to main content — ADA/WCAG 2.4.1 -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to analyze site traffic and improve your experience. By clicking "Accept," you consent to our use of cookies. See our <a href="#privacy">Privacy Policy</a> for details.</p>
+    <div class="cookie-actions">
+      <button id="cookieAccept" class="btn btn-primary btn-sm">Accept</button>
+      <button id="cookieDecline" class="btn btn-outline-dark btn-sm">Decline</button>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="header" id="header">
     <div class="container header-inner">
-      <a href="#" class="logo">
-        <img src="images/logo-white.png" alt="White Dove Cleaning Services" class="logo-img logo-img-white">
-        <img src="images/logo-black.png" alt="White Dove Cleaning Services" class="logo-img logo-img-dark">
+      <a href="#" class="logo" aria-label="White Dove Cleaning Services — Home">
+        <svg class="logo-icon logo-icon-white" width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 4c-2 0-3.5 1-4.5 2.5C10 5.5 8 5 6.5 6S4.5 8.5 5 10c-1.5 1-2 3-1 4.5s3 2 4.5 1.5c.5 2 2 3.5 3.5 4.5l4 3v3l-4 1h8l-4-1v-3l4-3c1.5-1 3-2.5 3.5-4.5 1.5.5 3.5 0 4.5-1.5s.5-3.5-1-4.5c.5-1.5 0-3.5-1.5-4.5S22 5.5 20.5 6.5C19.5 5 18 4 16 4z"/></svg>
+        <span class="logo-text">White Dove</span>
       </a>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#testimonials">Reviews</a>
@@ -47,16 +66,18 @@
       </nav>
       <div class="header-right">
         <a href="tel:+13177932172" class="phone-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           (317) 793-2172
         </a>
         <a href="#quote" class="btn btn-primary btn-sm">Request Estimate</a>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+
+  <main id="main">
 
   <!-- Hero -->
   <section class="hero">
@@ -87,42 +108,42 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Residential Cleaning</h3>
           <p>Enjoy a spotless and healthy living environment with our customized cleaning plans. We vacuum, mop, dust, clean kitchens and bathrooms, and handle garbage removal — every visit.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V7m8 0v14"/><path d="M2 7h20"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 21V7m8 0v14"/><path d="M2 7h20"/></svg>
           </div>
           <h3>Commercial Cleaning</h3>
           <p>Keep your workspace professional and welcoming. We serve offices, retail spaces, gyms, salons, churches, and Airbnb rentals with flexible scheduling around your business hours.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Deep Cleaning</h3>
           <p>Sometimes you need more than a standard clean. Our deep cleaning services tackle every corner, delivering exceptional results and a deeper level of cleanliness.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
           </div>
           <h3>Move-In / Move-Out</h3>
           <p>Preparing for a move? We ensure every inch is spotless — whether you're leaving a great impression or starting fresh in your new space.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <h3>Post-Construction</h3>
           <p>Recovering from a renovation? We handle the dust and debris so you can enjoy your newly updated space without the mess.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
           <h3>Specialty Cleaning</h3>
           <p>From event cleanings to unique spaces, we offer specialized solutions designed to tackle specific challenges and deliver exceptional results.</p>
@@ -216,7 +237,7 @@
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p>"White Dove has been cleaning our home for months and we couldn't be happier. They're thorough, reliable, and always go above and beyond."</p>
           <div class="testimonial-author">
             <strong>Sarah M.</strong>
@@ -224,15 +245,15 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>"I was nervous about letting someone into my home, but the White Dove team put me completely at ease. Professional, friendly, and my house has never looked better!"</p>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Elisha does a great job and makes everything shine! She cleaned my house before I put it on the market and has cleaned my new house as well. She rearranged her schedule when cleaning my house so it was clean in time for the photographer. Highly recommend!"</p>
           <div class="testimonial-author">
-            <strong>Linda T.</strong>
-            <span>Plainfield, IN</span>
+            <strong>Julie Haydon</strong>
+            <span>Zionsville, IN</span>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p>"Used them for a move-out clean and my landlord said it was the cleanest he'd ever seen the apartment. Got my full deposit back!"</p>
           <div class="testimonial-author">
             <strong>James R.</strong>
@@ -273,11 +294,11 @@
           <p>Fill out the form and our team will review your request and get back to you as soon as possible. No pressure, no obligation.</p>
           <div class="quote-contact">
             <div class="quote-contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               <a href="tel:+13177932172">(317) 793-2172</a>
             </div>
             <div class="quote-contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:whitedovecleaningco@gmail.com">whitedovecleaningco@gmail.com</a>
             </div>
           </div>
@@ -290,21 +311,21 @@
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required>
+              <input type="text" id="firstName" name="firstName" required aria-required="true" autocomplete="given-name">
             </div>
             <div class="form-group">
               <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required>
+              <input type="text" id="lastName" name="lastName" required aria-required="true" autocomplete="family-name">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" required>
+              <input type="tel" id="phone" name="phone" required aria-required="true" autocomplete="tel">
             </div>
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
             </div>
           </div>
           <div class="form-group">
@@ -334,6 +355,12 @@
             <label for="message">Please share any additional details</label>
             <textarea id="message" name="message" rows="4" placeholder="Square footage, number of rooms, special requests, preferred schedule..."></textarea>
           </div>
+          <div class="form-group form-consent">
+            <label class="consent-label">
+              <input type="checkbox" id="consent" name="consent" required aria-required="true">
+              <span>I agree to the <a href="#privacy">Privacy Policy</a> and consent to White Dove Cleaning Services using my information to respond to this request. *</span>
+            </label>
+          </div>
           <button type="submit" class="btn btn-primary btn-lg btn-full">Send Request</button>
           <p class="form-note">We'll review your request and get back to you as soon as possible.</p>
         </form>
@@ -345,28 +372,28 @@
   <section class="contact" id="contact">
     <div class="container contact-inner">
       <div class="contact-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div>
           <strong>Location</strong>
           <p>Indianapolis, IN 46231</p>
         </div>
       </div>
       <div class="contact-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         <div>
           <strong>Phone</strong>
           <p><a href="tel:+13177932172">(317) 793-2172</a></p>
         </div>
       </div>
       <div class="contact-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         <div>
           <strong>Email</strong>
           <p><a href="mailto:whitedovecleaningco@gmail.com">whitedovecleaningco@gmail.com</a></p>
         </div>
       </div>
       <div class="contact-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         <div>
           <strong>Hours</strong>
           <p>Mon - Fri: 8am - 6pm<br>Sat &amp; Sun: By Request</p>
@@ -375,11 +402,50 @@
     </div>
   </section>
 
+  </main>
+
+  <!-- Privacy Policy -->
+  <section class="privacy" id="privacy">
+    <div class="container">
+      <div class="section-header">
+        <h2>Privacy Policy</h2>
+      </div>
+      <div class="privacy-content">
+        <p><strong>Last updated:</strong> May 18, 2025</p>
+        <p>White Dove Cleaning Services ("we," "us," or "our") respects your privacy. This policy describes how we collect, use, and protect your personal information when you use our website.</p>
+
+        <h3>Information We Collect</h3>
+        <p>When you submit our estimate request form, we collect your first name, last name, phone number, email address, and any additional details you provide. We also collect anonymous usage data (pages visited, time on site) through Google Analytics if you consent to cookies.</p>
+
+        <h3>How We Use Your Information</h3>
+        <p>We use your contact information solely to respond to your estimate request and provide cleaning services. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+        <h3>Third-Party Services</h3>
+        <p>We use Formsubmit.co to process form submissions (delivers your request to our email), and Google Tag Manager/Analytics for anonymous site analytics (only with your consent). These services have their own privacy policies.</p>
+
+        <h3>Cookies</h3>
+        <p>Our site uses cookies only when you accept them via our consent banner. Declining cookies disables all analytics tracking. Essential site functionality works without cookies.</p>
+
+        <h3>Data Retention</h3>
+        <p>We retain your contact information only as long as necessary to fulfill your service request. You may request deletion of your data at any time by emailing us.</p>
+
+        <h3>Your Rights</h3>
+        <p>You have the right to access, correct, or delete your personal data. Indiana residents and EU visitors have additional rights under applicable privacy laws. Contact us at <a href="mailto:whitedovecleaningco@gmail.com">whitedovecleaningco@gmail.com</a> to exercise these rights.</p>
+
+        <h3>Contact</h3>
+        <p>For privacy questions, contact us at <a href="mailto:whitedovecleaningco@gmail.com">whitedovecleaningco@gmail.com</a> or call <a href="tel:+13177932172">(317) 793-2172</a>.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="images/logo-white.png" alt="White Dove Cleaning Services" class="footer-logo">
+        <div class="footer-logo-mark" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4c-2 0-3.5 1-4.5 2.5C10 5.5 8 5 6.5 6S4.5 8.5 5 10c-1.5 1-2 3-1 4.5s3 2 4.5 1.5c.5 2 2 3.5 3.5 4.5l4 3v3l-4 1h8l-4-1v-3l4-3c1.5-1 3-2.5 3.5-4.5 1.5.5 3.5 0 4.5-1.5s.5-3.5-1-4.5c.5-1.5 0-3.5-1.5-4.5S22 5.5 20.5 6.5C19.5 5 18 4 16 4z"/></svg>
+          <span class="footer-logo-text">White Dove Cleaning Services</span>
+        </div>
         <p>Professional residential and commercial cleaning services for the Indianapolis metro area.</p>
       </div>
       <div class="footer-links">
@@ -388,6 +454,7 @@
         <a href="#testimonials">Reviews</a>
         <a href="#quote">Request Estimate</a>
         <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 White Dove Cleaning Services. All rights reserved.</p>
