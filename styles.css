@@ -149,15 +149,11 @@ img {
 }
 
 .logo-icon {
-  transition: color var(--transition);
-}
-
-.logo-icon-white {
-  color: var(--white);
-}
-
-.scrolled .logo-icon-white {
-  color: var(--gold);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
 .logo-text {
@@ -865,6 +861,13 @@ img {
   gap: 8px;
   margin-bottom: 12px;
   color: rgba(255,255,255,0.7);
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.85);
 }
 
 .footer-logo-text {

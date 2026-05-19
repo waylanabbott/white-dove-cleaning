@@ -6,12 +6,8 @@
   var EMAIL = 'whitedovecleaningco@gmail.com';
   var DOMAIN = 'https://www.whitedovecleaningservices.com';
 
-  var DOVE_SVG = '<svg class="logo-icon logo-icon-white" width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">' +
-    '<path d="M16 28L18 18Q24 12 29 5Q23 5 16 12Q9 5 3 5Q8 12 14 18Z"/>' +
-    '<circle cx="16" cy="10" r="1.5"/>' +
-    '</svg>';
-
-  var DOVE_SVG_FOOTER = DOVE_SVG.replace('width="30" height="30"', 'width="36" height="36"');
+  var LOGO_HEADER = '<img class="logo-icon" src="/images/logo-circle.png" alt="" width="42" height="42" aria-hidden="true">';
+  var DOVE_IMG_FOOTER = '<img class="footer-logo-img" src="/images/dove-logo.png" alt="White Dove Cleaning Services" width="180" height="120">';
 
   var isHome = (location.pathname === '/' || location.pathname === '/index.html' || location.pathname.endsWith('/White%20Dove%20Cleaning/index.html') || location.pathname.endsWith('/White%20Dove%20Cleaning/'));
 
@@ -45,7 +41,7 @@
       '<header class="header" id="header">' +
         '<div class="container header-inner">' +
           '<a href="/" class="logo" aria-label="White Dove Cleaning Services — Home">' +
-            DOVE_SVG +
+            LOGO_HEADER +
             '<span class="logo-text">White Dove</span>' +
           '</a>' +
           '<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">' +
@@ -77,9 +73,8 @@
       '<footer class="footer">' +
         '<div class="container footer-inner">' +
           '<div class="footer-brand">' +
-            '<div class="footer-logo-mark" aria-hidden="true">' +
-              DOVE_SVG_FOOTER +
-              '<span class="footer-logo-text">White Dove Cleaning Services</span>' +
+            '<div class="footer-logo-mark">' +
+              DOVE_IMG_FOOTER +
             '</div>' +
             '<p>Professional residential and commercial cleaning services for the Indianapolis metro area.</p>' +
           '</div>' +
