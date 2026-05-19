@@ -7,8 +7,8 @@
   var DOMAIN = 'https://www.whitedovecleaningservices.com';
 
   var DOVE_SVG = '<svg class="logo-icon logo-icon-white" width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">' +
-    '<path d="M6 20c-1-2-1-4 0-6l3-4c0-2 1-4 3-5 2 0 3 1 4 3 1-2 2-3 4-3 2 1 3 3 3 5l3 4c1 2 1 4 0 6l-4 4c-2 2-3 3-5 3h-2c-2 0-3-1-5-3l-4-4z"/>' +
-    '<path d="M16 11l-5-6c3-1 5 0 5 2 0-2 2-3 5-2l-5 6z"/>' +
+    '<path d="M16 28L18 18Q24 12 29 5Q23 5 16 12Q9 5 3 5Q8 12 14 18Z"/>' +
+    '<circle cx="16" cy="10" r="1.5"/>' +
     '</svg>';
 
   var DOVE_SVG_FOOTER = DOVE_SVG.replace('width="30" height="30"', 'width="36" height="36"');
