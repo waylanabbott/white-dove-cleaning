@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /service-areas/
+Allow: /blog/
+Allow: /privacy/
 
 Sitemap: https://www.whitedovecleaningservices.com/sitemap.xml
