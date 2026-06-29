@@ -7,7 +7,7 @@
   var DOMAIN = 'https://www.whitedovecleaningservices.com';
 
   var LOGO_HEADER = '<img class="logo-icon" src="/images/logo-circle.png" alt="" width="42" height="42" aria-hidden="true">';
-  var DOVE_IMG_FOOTER = '<img class="footer-logo-img" src="/images/dove-logo.png" alt="White Dove Cleaning Services" width="180" height="120">';
+  var DOVE_IMG_FOOTER = '<img class="footer-logo-img" src="/images/logo-white.png" alt="White Dove Cleaning Services" width="180" height="180">';
 
   var isHome = (location.pathname === '/' || location.pathname === '/index.html' || location.pathname.endsWith('/White%20Dove%20Cleaning/index.html') || location.pathname.endsWith('/White%20Dove%20Cleaning/'));
 
