@@ -101,8 +101,14 @@
     var nav = document.getElementById('nav');
     if (!header || !toggle || !nav) return;
 
+    if (!isHome) {
+      header.classList.add('scrolled');
+    }
+
     window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+      if (isHome) {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      }
     });
 
     toggle.addEventListener('click', function () {
