@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  var PHONE = '(317) 797-4033';
-  var PHONE_HREF = 'tel:+13177974033';
+  var PHONE = '(765) 358-5028';
+  var PHONE_HREF = 'tel:+17653585028';
   var EMAIL = 'whitedovecleaningco@gmail.com';
   var DOMAIN = 'https://www.whitedovecleaningservices.com';
 

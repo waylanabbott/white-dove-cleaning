@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(function () {
       btn.textContent = 'Send Request';
       btn.disabled = false;
-      alert('Something went wrong. Please call us at (317) 797-4033 or try again.');
+      alert('Something went wrong. Please call us at (765) 358-5028 or try again.');
     });
   });
 });
